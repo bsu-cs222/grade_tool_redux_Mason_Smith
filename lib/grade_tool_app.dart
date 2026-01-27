@@ -23,7 +23,8 @@ class GradeToolWidget extends StatefulWidget {
   const GradeToolWidget({super.key})
 
   @override
-  State<GradeToolWidget> createState() => _GradeToolWidgetState();
+  State<GradeToolWidget> createState() =>
+      _GradeToolWidgetState();
 }
 
 class _GradeToolWidgetState extends State<GradeToolWidget> {
@@ -46,9 +47,11 @@ class _GradeToolWidgetState extends State<GradeToolWidget> {
       )
     );
   }
-}
-
-void _gradeConverter() {
-  final converter = GradeTool();
-  final numGrade = double.parse(_controller.text);
+  void _gradeConverter() {
+    final converter = GradeTool();
+    final numGrade = double.parse(_controller.text);
+    final result = converter.numberToLetter(numGrade);
+    setState(() {
+      message = result.toString();
+    });
 }
