@@ -29,7 +29,7 @@ void main() {
     expect(result, "Not valid grade");
   });
 
-  test('number over 100 is invalid', () {
+  test('Number over 100 is invalid', () {
     final result = tool.numberToLetter(101);
     expect(result, "Not valid grade");
   });
