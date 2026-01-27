@@ -4,7 +4,7 @@ class GradeTool {
 
   GradeTool(this.gradeRanges);
 
-  String numberToLetter(int numGrade) {
+  String numberToLetter(double numGrade) {
     for (final range in gradeRanges) {
       if (numGrade >= range.minimum && numGrade <= range.maximum) {
         return range.letterGrade;
@@ -23,8 +23,8 @@ List<GradeRange> gradeRanges = [
 ];
 
 class GradeRange {
-  final int minimum;
-  final int maximum;
+  final double minimum;
+  final double maximum;
   String letterGrade;
 
   GradeRange (this.minimum, this.maximum, this.letterGrade);

@@ -14,8 +14,8 @@ void main() {
     expect(result, "A");
   });
 
-  test('80 is an B', () {
-    final result = tool.numberToLetter(80);
+  test('80.5 is an B', () {
+    final result = tool.numberToLetter(80.5);
     expect(result, "B");
   });
 
