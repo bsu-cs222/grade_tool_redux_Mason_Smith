@@ -5,6 +5,6 @@ void main() {
   test('100 is an A', () {
     final tool = GradeTool();
     final result = tool.findGrade(100);
-    expect(GradeTool(), result);
+    expect("A", result);
   });
 }

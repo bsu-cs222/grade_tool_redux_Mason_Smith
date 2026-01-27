@@ -1,19 +1,32 @@
+enum Grade {
+  A,
+  B,
+  C,
+  D,
+
+  F,
+}
+
+final _mapper = {
+  Grade.A: Range(0.9, 1.0),
+  Grade.B: Range(0.8, 0.9),
+  Grade.C: Range(0.7, 0.8),
+  Grade.D: Range(0.6, 0.7),
+  Grade.F: Range(0, 0.59),
+}
+
 class GradeTool {
-  String findGrade(int numGrade) {
-    String letterGrade;
-    if (numGrade < 60) {
-      letterGrade = "F";
-    } else if (numGrade < 70) {
-      letterGrade = "D";
-    } else if (numGrade < 80) {
-      letterGrade = "C";
-    } else if (numGrade < 90) {
-      letterGrade = "B";
-    } else if (numGrade < 100) {
-      letterGrade = "A";
+  Grade convert(double grade) {
+    if (grade >= 0.9) {
+      return Grade.A;
+    } else if (grade >= 0.8) {
+      return Grade.B;
+    } else if (grade >= 0.7) {
+      return Grade.C;
+    } else if (grade >= 0.6) {
+      return Grade.D;
     } else {
-      return "Grade not valid";
+      return Grade.F;
     }
-    return "Grade not valid";
   }
 }
