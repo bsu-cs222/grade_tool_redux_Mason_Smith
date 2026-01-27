@@ -20,7 +20,7 @@ class GradeToolApp extends StatelessWidget {
 }
 
 class GradeToolWidget extends StatefulWidget {
-  const GradeToolWidget({super.key})
+  const GradeToolWidget({super.key});
 
   @override
   State<GradeToolWidget> createState() =>
@@ -35,23 +35,25 @@ class _GradeToolWidgetState extends State<GradeToolWidget> {
   Widget build(BuildContext context) {
     final style = TextStyle(fontSize: 32);
     return Scaffold(
-      body: Column(
-        children: [
-          TextField(style:style, controller: _controller),
-          ElevatedButton(
+        body: Column(
+          children: [
+            TextField(style: style, controller: _controller),
+            ElevatedButton(
               onPressed: _gradeConverter,
               child: Text('Check', style: style),
-          ),
-          Text(message, style: style),
-        ],
-      )
+            ),
+            Text(message, style: style),
+          ],
+        )
     );
   }
+
   void _gradeConverter() {
-    final converter = GradeTool();
+    final converter = GradeTool(gradeRanges);
     final numGrade = double.parse(_controller.text);
     final result = converter.numberToLetter(numGrade);
     setState(() {
       message = result.toString();
     });
+  }
 }
