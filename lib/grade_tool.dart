@@ -22,7 +22,6 @@ List<GradeRange> gradeRanges = [
   GradeRange(0, 59, "F"),
 ];
 
-
 class GradeRange {
   final int minimum;
   final int maximum;
