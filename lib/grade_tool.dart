@@ -1,5 +1,6 @@
 class GradeTool {
-  String findGrade(int numGrade, String letterGrade) {
+  String findGrade(int numGrade) {
+    String letterGrade;
     if (numGrade < 60) {
       letterGrade = "F";
     } else if (numGrade < 70) {
