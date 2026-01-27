@@ -1,24 +1,32 @@
-class GradeTool {
-  final double minimum;
-  final double maximum;
-  String letterGrade;
 
-  GradeTool (this.minimum, this.maximum, this.letterGrade);
+class GradeTool {
+  final List<GradeRange> gradeRanges;
+
+  GradeTool(this.gradeRanges);
+
+  String numberToLetter(int numGrade) {
+    for (final range in gradeRanges) {
+      if (numGrade >= range.minimum && numGrade <= range.maximum) {
+        return range.letterGrade;
+      }
+    }
+    return "Not valid grade";
+  }
 }
 
-List<GradeTool> gradeRanges = [
-  GradeTool(0.9, 1, "A"),
-  GradeTool(0.8, 0.89, "B"),
-  GradeTool(0.7, 0.79, "C"),
-  GradeTool(0.6, 0.69, "D"),
-  GradeTool(0, 0.59, "F"),
+List<GradeRange> gradeRanges = [
+  GradeRange(90, 100, "A"),
+  GradeRange(80, 89, "B"),
+  GradeRange(70, 79, "C"),
+  GradeRange(60, 69, "D"),
+  GradeRange(0, 59, "F"),
 ];
 
-String numberToLetter(int numGrade) {
-  for (final range in gradeRanges) {
-    if (numGrade >= range.minimum && numGrade <= range.maximum) {
-      return range.letterGrade;
-    }
-  }
-  return "Not valid grade";
+
+class GradeRange {
+  final int minimum;
+  final int maximum;
+  String letterGrade;
+
+  GradeRange (this.minimum, this.maximum, this.letterGrade);
 }
