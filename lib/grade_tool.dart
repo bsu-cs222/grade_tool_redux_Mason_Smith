@@ -1,17 +1,17 @@
-class Range {
+class GradeTool {
   final double minimum;
   final double maximum;
   String letterGrade;
 
-  Range (this.minimum, this.maximum, this.letterGrade);
+  GradeTool (this.minimum, this.maximum, this.letterGrade);
 }
 
-List<Range> gradeRanges = [
-  Range(0.9, 1, "A"),
-  Range(0.8, 0.89, "B"),
-  Range(0.7, 0.79, "C"),
-  Range(0.6, 0.69, "D"),
-  Range(0, 0.59, "F"),
+List<GradeTool> gradeRanges = [
+  GradeTool(0.9, 1, "A"),
+  GradeTool(0.8, 0.89, "B"),
+  GradeTool(0.7, 0.79, "C"),
+  GradeTool(0.6, 0.69, "D"),
+  GradeTool(0, 0.59, "F"),
 ];
 
 String numberToLetter(int numGrade) {
