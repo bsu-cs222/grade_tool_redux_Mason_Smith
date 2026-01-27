@@ -12,6 +12,11 @@ class GradeToolApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Grading Tool',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.blue
+        ),
+      ),
       home: const GradeToolWidget()
     );
   }
