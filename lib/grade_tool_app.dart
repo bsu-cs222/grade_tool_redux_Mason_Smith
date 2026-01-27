@@ -38,9 +38,16 @@ class _GradeToolWidgetState extends State<GradeToolWidget> {
   Widget build(BuildContext context) {
     final style = TextStyle(fontSize: 32);
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextField(style: style, controller: _controller),
+            TextField(
+              textAlign: TextAlign.center,
+              style: style,
+              controller: _controller,
+            ),
             ElevatedButton(
               onPressed: _gradeConverter,
               child: Text('Check', style: style),
