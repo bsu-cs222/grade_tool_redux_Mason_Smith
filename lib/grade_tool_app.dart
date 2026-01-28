@@ -32,27 +32,28 @@ class GradeToolWidget extends StatefulWidget {
 
 class _GradeToolWidgetState extends State<GradeToolWidget> {
   final TextEditingController _controller = TextEditingController();
-  String message = "Result";
+  String resultText = "Grade Result";
 
   @override
   Widget build(BuildContext context) {
-    final style = TextStyle(fontSize: 32);
+    final textSize = TextStyle(fontSize: 32);
     return Scaffold(
       backgroundColor: Colors.blueGrey,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
+
           children: [
             TextField(
               textAlign: TextAlign.center,
-              style: style,
+              style: textSize,
               controller: _controller,
             ),
             ElevatedButton(
               onPressed: _gradeConverter,
-              child: Text('Check', style: style),
+              child: Text('Check', style: textSize),
             ),
-            Text(message, style: style),
+            Text(resultText, style: textSize),
           ],
         )
     );
@@ -61,9 +62,8 @@ class _GradeToolWidgetState extends State<GradeToolWidget> {
   void _gradeConverter() {
     final converter = GradeTool(gradeRanges);
     final numGrade = double.parse(_controller.text);
-    final result = converter.numberToLetter(numGrade);
-    setState(() {
-      message = result.toString();
-    });
+    final gradeResult = converter.numberToLetter(numGrade);
+
+    setState(() {resultText = gradeResult.toString();});
   }
 }
